@@ -161,7 +161,8 @@
                         payment: payment,
                         commit: true,
                         onAuthorize: onAuthorize,
-                        onCancel: this.props.onCancel
+                        onCancel: this.props.onCancel,
+                        onClick: this.props.onClick
 
                         // "Error: Unrecognized prop: shipping" was caused by the next line
                         // shipping={this.props.shipping}
@@ -198,6 +199,9 @@
         },
         onError: function onError(err) {
             console.log('Error loading Paypal script!', err);
+        },
+        onClick: function onClick(data) {
+            console.log('The button was clicked!', data);
         }
     };
 
